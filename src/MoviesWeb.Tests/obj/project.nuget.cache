@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mPhTWPRCqcGPF0O6KadutG/G6kUF+VV4+p5m4ltRXQ4vGl7t/+JlQIlNRsBT4DzprshoFjl3F1XuvurSyV19VQ==",
+  "dgSpecHash": "GITu1HbklUwmwypP1gyz4dB6yHGa9F1XibTTXtImdMRKhTE5U9bo+GQXbFAPOaX3jN3IEf4URxFQL1zwRx0GIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj",
+  "projectFilePath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\klucz\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\klucz\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
