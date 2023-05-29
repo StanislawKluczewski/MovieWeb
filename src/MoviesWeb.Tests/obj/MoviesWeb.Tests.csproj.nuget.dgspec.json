@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj": {}
+    "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj": {
+    "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj",
         "projectName": "MoviesWeb.Tests",
-        "projectPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj",
+        "projectPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.Tests\\MoviesWeb.Tests.csproj",
         "packagesPath": "C:\\Users\\klucz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.Tests\\obj\\",
+        "outputPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj": {
-                "projectPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj"
+              "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj": {
+                "projectPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj"
               }
             }
           }
@@ -97,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj": {
+    "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj",
         "projectName": "MoviesWeb.WebApi",
-        "projectPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj",
+        "projectPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\MoviesWeb.WebApi.csproj",
         "packagesPath": "C:\\Users\\klucz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Projekty\\MoviesWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\klucz\\OneDrive\\Pulpit\\Stasiu\\Github\\MovieWeb\\MovieWeb\\src\\MoviesWeb.WebApi\\MoviesWeb.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
