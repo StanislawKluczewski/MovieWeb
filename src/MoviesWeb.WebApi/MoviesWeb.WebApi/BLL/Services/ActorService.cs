@@ -14,16 +14,16 @@ namespace MoviesWeb.WebApi.BLL.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task AddMovieToActor(Movie movie, int actorId)
+        public async Task AddMovieToActor(Movie movie, Actor _actor)
         {
-            var actor = await this.unitOfWork.ActorRepository.GetActor(actorId);
+            var actor = await this.unitOfWork.ActorRepository.GetActor(_actor.ActorId);
             actor.ActorMovies?.Add(movie);
             await this.unitOfWork.ActorRepository.Save();
         }
 
-        public async Task ChangeActorMark(int actorId, double mark)
+        public async Task ChangeActorMark(Actor _actor, double mark)
         {
-            var actor = await this.unitOfWork.ActorRepository.GetActor(actorId);
+            var actor = await this.unitOfWork.ActorRepository.GetActor(_actor.ActorId);
             if (actor != null && actor.ActorMark != mark)
             {
                 actor.ActorMark = mark;
@@ -31,19 +31,14 @@ namespace MoviesWeb.WebApi.BLL.Services
             }
         }
 
-        public async Task<IEnumerable<Movie>> GetActorMovies(int actorId)
+        public async Task<IEnumerable<Movie>> GetActorMovies(Actor _actor)
         {
-            var actor = await this.unitOfWork.ActorRepository.GetActor(actorId);
+            var actor = await this.unitOfWork.ActorRepository.GetActor(_actor.ActorId);
             if (actor != null)
             {
                 return actor.ActorMovies.ToList();
             }
             return Enumerable.Empty<Movie>();
-        }
-        public async Task<IEnumerable<Actor>> GetActors()
-        {
-            var actors = await this.unitOfWork.ActorRepository.GetActors();
-            return actors.ToList();
         }
     }
 }

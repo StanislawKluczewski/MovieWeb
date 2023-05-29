@@ -9,6 +9,7 @@ using MoviesWeb.WebApi.DAL.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,41 +26,57 @@ namespace MoviesWeb.Tests.UnitTests.BLL
         }
 
         [Fact]
-        public async Task ShouldCountActors()
+        public async Task ShouldCountActorMovies()
         {
-            var actor = new Actor() { ActorId = 1, Name = "Actor1" };
-            var actor1 = new Actor() { ActorId = 2, Name = "Actor2" };
+            // Arrange
+            Actor actor = new Actor() { ActorId = 1, ActorMovies = new List<Movie> { new Movie { MovieId = 1, Name = "Movie1" } } };
+            this.mockActorRepository.Setup(x => x.GetActor(actor.ActorId))
+                                 .ReturnsAsync(actor);
+            var unitOfWork = new UnitOfWork(null, this.mockActorRepository.Object, null);
+            var actorService = new ActorService(unitOfWork);
 
+            // Act
+            var result = await Task.FromResult(actorService.GetActorMovies(actor));
 
+            // Assert
+            Assert.Equal(1, result.Result.Count());
+            Assert.Equal(actor.ActorMovies, result.Result);
         }
 
         [Fact]
-        public async Task ShouldCheckDeletingActors()
+        public async Task ShouldCheckAddingMovieToActor()
         {
+            // Arrange
+            Actor actor = new Actor() { ActorId = 1, ActorMovies = new List<Movie> { } };
+            this.mockActorRepository.Setup(x => x.GetActor(actor.ActorId))
+                                    .ReturnsAsync(actor);
+            var unitOfWork = new UnitOfWork(null, this.mockActorRepository.Object, null);
+            var actorService = new ActorService(unitOfWork);
 
+            // Act
+            await actorService.AddMovieToActor(new Movie { MovieId = 1, Name = "Movie1" }, actor);
+            var result = await Task.FromResult(actorService.GetActorMovies(actor));
+            
+            // Assert
+            Assert.Equal(result.Result.Count(), 1);
+            Assert.Equal(result.Result, actor.ActorMovies);
         }
 
         [Fact]
-        public async Task ShouldCheckAddingMoviesToActors()
+        public async Task ShouldCheckChangingActorMark()
         {
-            Actor actor1 = new Actor() { ActorId = 1, Name = "Actor1" };
-            Actor actor2 = new Actor() { ActorId = 2, Name = "Actor2" };
-            this.mockActorRepository.Setup(x=> x.GetActors()).ReturnsAsync(new List<Actor>() { actor1, actor2 });
-
+            // Arrange
+            Actor actor = new Actor() { ActorId = 1, Name = "Bruce", Surname="Willis", Sex = "Man", ActorMark = 8.8 };
+            this.mockActorRepository.Setup(x => x.GetActor(actor.ActorId))
+                                    .ReturnsAsync(actor);
             var unitOfWork = new UnitOfWork(null, this.mockActorRepository.Object,null);
             var actorService = new ActorService(unitOfWork);
 
-            await actorService.AddMovieToActor(new Movie() { MovieId = 1, Name = "Film1"}, actor1.ActorId);
-            await actorService.AddMovieToActor(new Movie() { MovieId = 2, Name = "Film2" }, actor1.ActorId);
-            await actorService.AddMovieToActor(new Movie() { MovieId = 3, Name = "Film3" }, actor1.ActorId);
-            await actorService.AddMovieToActor(new Movie() { MovieId = 1, Name = "Film1" }, actor2.ActorId);
-            var resultActor1 = await actorService.GetActorMovies(actor1.ActorId);
-            var resultActor2 = await actorService.GetActorMovies(actor1.ActorId);
+            // Act
+            await actorService.ChangeActorMark(actor, 8.2);
 
-            Assert.Equal(3, resultActor1.Count());
-            Assert.Equal(1, resultActor2.Count());
+            // Assert
+            Assert.Equal(actor.ActorMark, 8.1999999999999993);
         }
-
-
     }
 }
