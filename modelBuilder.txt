@@ -1,0 +1,211 @@
+ modelBuilder.Entity<Movie>()
+                .HasData(
+                    new Movie()
+                    {
+                        MovieId = 1,
+                        Name = "Dark Knight",
+                        DateOfProduction = new DateTime(),
+                        Actors = new List<Actor>{
+                            new Actor()
+                            {
+                                ActorId = 1,
+                                Name = "Health",
+                                Surname = "Ledger",
+                                Sex="Man",
+                                Wiek = 28,
+                                Nationality = "USA",
+                                ActorMark = 8.9
+
+                            },
+                            new Actor()
+                            {
+                                ActorId = 2,
+                                Name = "Christian",
+                                Surname = "Bale",
+                                Sex="Man",
+                                Wiek = 35,
+                                Nationality = "USA",
+                                ActorMark = 8.2
+                            }
+                        },
+                        Category = "Drama",
+                        MovieLength = 120,
+                        BoxOffice = 12000000,
+                        MovieMark = 8.1,
+                        ProductionCountry = "USA",
+                    },
+                    new Movie()
+                    {
+                        MovieId = 2,
+                        Name = "Seven",
+                        DateOfProduction = new DateTime(),
+                        Actors = new List<Actor>{
+                            new Actor()
+                            {
+                                ActorId = 3,
+                                Name = "Brad",
+                                Surname = "Pitt",
+                                Sex="Man",
+                                Wiek = 40,
+                                Nationality = "USA",
+                                ActorMark = 8.7
+                            },
+                            new Actor()
+                            {
+                                ActorId = 4,
+                                Name = "Morgan",
+                                Surname = "Freeman",
+                                Sex="Man",
+                                Wiek = 60,
+                                Nationality = "USA",
+                                ActorMark = 8.5
+                            }
+                        },
+                        Category = "Thriller",
+                        MovieLength = 150,
+                        BoxOffice = 1000000,
+                        MovieMark = 8.5,
+                        ProductionCountry = "USA",
+                    }
+                );
+
+            modelBuilder.Entity<Actor>().HasData(
+                  new Actor()
+                  {
+                      ActorId = 1,
+                      Name = "Health",
+                      Surname = "Ledger",
+                      Sex = "Man",
+                      Wiek = 28,
+                      Nationality = "USA",
+                      ActorMark = 8.9
+
+                  },
+                  new Actor()
+                  {
+                      ActorId = 2,
+                      Name = "Christian",
+                      Surname = "Bale",
+                      Sex = "Man",
+                      Wiek = 35,
+                      Nationality = "USA",
+                      ActorMark = 8.2
+                  },
+                  new Actor()
+                  {
+                      ActorId = 3,
+                      Name = "Brad",
+                      Surname = "Pitt",
+                      Sex = "Man",
+                      Wiek = 40,
+                      Nationality = "USA",
+                      ActorMark = 8.7
+                  },
+                  new Actor()
+                  {
+                      ActorId = 4,
+                      Name = "Morgan",
+                      Surname = "Freeman",
+                      Sex = "Man",
+                      Wiek = 60,
+                      Nationality = "USA",
+                      ActorMark = 8.5
+                  }
+            );
+
+            modelBuilder.Entity<Director>().HasData(
+                new Director
+                {
+                    DirectorId = 1,
+                    Name = "Christopher",
+                    Surname = "Nolan",
+                    Sex = "Man",
+                    Wiek = 52,
+                    DirectorMovies = new List<Movie>
+                    {
+                        new Movie()
+                        {
+                            MovieId = 1,
+                            Name = "Dark Knight",
+                            DateOfProduction = new DateTime(),
+                            Actors = new List<Actor>{
+                                new Actor()
+                                {
+                                    ActorId = 1,
+                                    Name = "Health",
+                                    Surname = "Ledger",
+                                    Sex="Man",
+                                    Wiek = 28,
+                                    Nationality = "USA",
+                                    ActorMark = 8.9
+
+                                },
+                                new Actor()
+                                {
+                                    ActorId = 2,
+                                    Name = "Christian",
+                                    Surname = "Bale",
+                                    Sex="Man",
+                                    Wiek = 35,
+                                    Nationality = "USA",
+                                    ActorMark = 8.2
+                                }
+                            },
+                            Category = "Drama",
+                            MovieLength = 120,
+                            BoxOffice = 12000000,
+                            MovieMark = 8.1,
+                            ProductionCountry = "USA"
+                        }
+                    },
+                    Nationality = "English",
+                    DirectorMark = 8.7
+                },
+
+                new Director
+                {
+                    DirectorId = 2,
+                    Name = "David",
+                    Surname = "Fincher",
+                    Sex = "Man",
+                    Wiek = 60,
+                    DirectorMovies = new List<Movie>
+                    {
+                       new Movie()
+                       {
+                            MovieId = 2,
+                            Name = "Seven",
+                            DateOfProduction = new DateTime(),
+                            Actors = new List<Actor>{
+                                new Actor()
+                                {
+                                    ActorId = 3,
+                                    Name = "Brad",
+                                    Surname = "Pitt",
+                                    Sex="Man",
+                                    Wiek = 40,
+                                    Nationality = "USA",
+                                    ActorMark = 8.7
+                                },
+                                new Actor()
+                                {
+                                    ActorId = 4,
+                                    Name = "Morgan",
+                                    Surname = "Freeman",
+                                    Sex="Man",
+                                    Wiek = 60,
+                                    Nationality = "USA",
+                                    ActorMark = 8.5
+                                }
+                            },
+                            Category = "Thriller",
+                            MovieLength = 150,
+                            BoxOffice = 1000000,
+                            MovieMark = 8.5,
+                            ProductionCountry = "USA"
+                      }
+                    },
+                    Nationality = "USA",
+                    DirectorMark = 8.7
+                }
+            );
