@@ -8,20 +8,18 @@ using System.Threading.Tasks;
 
 namespace MoviesWeb.Tests.UnitTests.FakeMocks
 {
-    public class FakeActorRepository : IActorRepository
+    public class ActorRepositoryMock : IActorRepository
     {
         private List<Actor> actors = new List<Actor>();
         public async Task CreateActor(Actor actor)
         {
             actors.Add(actor);
-            return;
         }
 
         public async Task DeleteActor(int id)
         {
             var actor = await Task.FromResult(actors.Find(a => a.ActorId == id));
             actors.Remove(actor);
-            return;
         }
 
         public async Task<Actor> GetActor(int id)

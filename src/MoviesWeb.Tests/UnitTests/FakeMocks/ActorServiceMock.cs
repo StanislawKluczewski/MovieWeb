@@ -14,27 +14,33 @@ namespace MoviesWeb.Tests.UnitTests.FakeMocks
         private List<Actor> _actors = new List<Actor>() { };
 
 
-        public async Task AddMovieToActor(Movie movie, int actorId)
+        public async Task AddMovieToActor(Movie movie, Actor actor)
         {
-            var actor = await Task.FromResult(_actors.Find(a => a.ActorId == actorId));
-            actor?.ActorMovies?.Add(movie);
+            if (movie != null && actor != null)
+            {
+                actor?.ActorMovies?.Add(movie);
+            }
         }
 
-        public async Task ChangeActorMark(int actorId, double mark)
+        public async Task RemoveMovieFromActor(Movie movie, Actor actor)
         {
-            var actor = await Task.FromResult(_actors.Find(a => a.ActorId == actorId));
-            actor.ActorMark = mark;
+            if (movie != null && actor != null)
+            {
+                actor.ActorMovies?.Remove(movie);
+            }
         }
 
-        public async Task<IEnumerable<Movie>> GetActorMovies(int actorId)
+        public async Task ChangeActorMark(Actor actor, double mark)
         {
-            var actor = await Task.FromResult(_actors.Find(a => a.ActorId == actorId));
-            return actor.ActorMovies.ToList();
+            if (mark > 0.0)
+            {
+                actor.ActorMark = mark;
+            }
         }
 
-        public async Task<IEnumerable<Actor>> GetActors()
+        public async Task<IEnumerable<Movie>> GetActorMovies(Actor actor)
         {
-            var result = await Task.FromResult(_actors.ToList());
+            var result = await Task.FromResult(actor.ActorMovies?.ToList());
             return result;
         }
     }
